@@ -1,2 +1,5 @@
 # Dossier PHPStorm
 .idea
+
+# Dépendances du projet
+/vendor/
