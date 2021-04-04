@@ -1,6 +1,3 @@
-<?php
-    use Memory\DAO\GameDAO;
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,8 +10,6 @@
     <h1>Memory - Accueil</h1>
     <p>En construction</p>
     <?php
-    $game = new GameDAO();
-    $games = $game->getResults();
     while($game = $games->fetch())
     {
         ?>
