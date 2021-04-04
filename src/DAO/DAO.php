@@ -7,7 +7,6 @@ namespace Memory\DAO;
 use PDO;
 use Exception;
 
-
 abstract class DAO
 {
     private $connexion;
@@ -45,7 +44,6 @@ abstract class DAO
             return $result;
         }
         $result = $this->checkConnexion()->query($sql);
-        $result->setFetchMode(PDO::FETCH_CLASS, static::class);
         return $result;
     }
 }

@@ -1,35 +1,17 @@
+<?php $this->title = "Memory - Game" ?>
+<h1>Memory - Game</h1>
+<p>En construction</p>
 <?php
-    use Memory\DAO\GameDAO;
-?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Memory</title>
-</head>
-
-<body>
-<div>
-    <h1>Memory - Game</h1>
-    <p>En construction</p>
-    <?php
-    $game = new GameDAO();
-    $games = $game->getResults();
-    while($game = $games->fetch())
-    {
-        ?>
-        <div>
-            <p><?= htmlspecialchars($game->date);?></p>
-            <p><?= htmlspecialchars($game->utilisateur);?></p>
-            <p><?= htmlspecialchars($game->level);?></p>
-            <p><?= htmlspecialchars($game->win);?></p>
-            <p><?= htmlspecialchars($game->temps);?></p>
-        </div>
-        <br>
-        <?php
-    }
-    $games->closeCursor();
+foreach ($games as $game) {
     ?>
-</div>
-</body>
-</html>
+    <div>
+        <p><?= htmlspecialchars($game->getDate()); ?></p>
+        <p><?= htmlspecialchars($game->getUtilisateur()); ?></p>
+        <p><?= htmlspecialchars($game->getLevel()); ?></p>
+        <p><?= htmlspecialchars($game->getWin()); ?></p>
+        <p><?= htmlspecialchars($game->getTemps()); ?></p>
+    </div>
+    <br>
+    <?php
+}
+?>
