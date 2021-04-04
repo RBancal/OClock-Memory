@@ -1,21 +1,22 @@
 {
-    "name": "raphaelbancal/memory",
-    "description": "Jeu du Memory OClock",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "Raphaël BANCAL",
-            "email": "raphael.bancal@orange.fr"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Memory\\": "src"
-        }
-    },
-    "require": {
-        "components/jquery": "^3.5",
-        "twig/twig": "^3.3",
-        "scssphp/scssphp": "^1.4"
+  "name": "raphaelbancal/memory",
+  "description": "Jeu du Memory OClock",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Raphaël BANCAL",
+      "email": "raphael.bancal@orange.fr"
     }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Memory\\": "src/"
+    }
+  },
+  "require": {
+    "components/jquery": "^3.5",
+    "twig/twig": "^3.3",
+    "scssphp/scssphp": "^1.4",
+    "ext-pdo": "*"
+  }
 }
