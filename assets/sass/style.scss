@@ -1,0 +1,175 @@
+@mixin fruit-position($position) {
+  position: relative;
+  bottom: $position;
+  opacity: 0;
+}
+
+body {
+  background-color: beige;
+  margin: 0;
+
+  header {
+    background-color: dodgerblue;
+    padding: 15px;
+
+    h1 {
+      text-align: center;
+      color: beige;
+    }
+
+    #button-index {
+      position: absolute;
+      top: 30px;
+      right: 25px;
+      border: 1px solid beige;
+      background-color: beige;
+      padding: 15px;
+    }
+  }
+
+  #form-user {
+    display: flex;
+    justify-content: center;
+
+    form {
+      margin-top: 30px;
+    }
+  }
+
+  #table-users {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    table {
+      width: 50%;
+
+      thead {
+        background-color: dodgerblue;
+        color: beige;
+        text-align: center;
+
+        td {
+          padding: 10px;
+        }
+      }
+
+      tbody {
+        background-color: cornflowerblue;
+        td {
+          height: 50px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  #informations {
+    margin-left: 15px;
+  }
+
+  #game-board {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    .game-row {
+      display: flex;
+      justify-content: center;
+
+      .fruit {
+        max-height: 100px;
+        overflow: hidden;
+        margin: 5px;
+        background-color: dodgerblue;
+
+        .pomme {
+          @include fruit-position(0px);
+        }
+
+        .banane {
+          @include fruit-position(100px);
+        }
+
+        .orange {
+          @include fruit-position(200px);
+        }
+
+        .citron-vert {
+          @include fruit-position(300px);
+        }
+
+        .grenade {
+          @include fruit-position(400px);
+        }
+
+        .abricot {
+          @include fruit-position(500px);
+        }
+
+        .citron {
+          @include fruit-position(600px);
+        }
+
+        .fraise {
+          @include fruit-position(700px);
+        }
+
+        .pomme-verte {
+          @include fruit-position(800px);
+        }
+
+        .peche {
+          @include fruit-position(900px);
+        }
+
+        .raisin {
+          @include fruit-position(1000px);
+        }
+
+        .pasteque {
+          @include fruit-position(1100px);
+        }
+
+        .prune {
+          @include fruit-position(1200px);
+        }
+
+        .poire {
+          @include fruit-position(1300px);
+        }
+
+        .cerise {
+          @include fruit-position(1400px);
+        }
+
+        .framboise {
+          @include fruit-position(1500px);
+        }
+
+        .mangue {
+          @include fruit-position(1600px);
+        }
+
+        .cerise-jaune {
+          @include fruit-position(1700px);
+        }
+      }
+    }
+  }
+
+  #progress-bar {
+    height: 30px;
+    background-color: dodgerblue;
+    margin: auto;
+
+    #progression {
+      width: 0;
+      height: 20px;
+      background-color: orangered;
+      position: relative;
+      top: 5px;
+      text-align: center;
+    }
+  }
+}

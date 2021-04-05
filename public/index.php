@@ -7,6 +7,5 @@ require '../vendor/autoload.php';
 
 use Memory\config\Router;
 
-
 $router = new Router();
 $router->run();

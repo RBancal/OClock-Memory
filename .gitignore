@@ -3,3 +3,6 @@
 
 # Dépendances du projet
 /vendor/
+
+# Cache de sass pour la génération du CSS
+.sass-cache
