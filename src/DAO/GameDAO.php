@@ -22,7 +22,7 @@ class GameDAO extends DAO
 
     public function getResults()
     {
-        $sql = 'SELECT id, date, utilisateur, level, win, temps FROM game ORDER BY temps DESC';
+        $sql = 'SELECT id, date, utilisateur, level, win, temps FROM game ORDER BY temps ASC';
         $result = $this->createQuery($sql);
 
         $games = [];
@@ -32,5 +32,14 @@ class GameDAO extends DAO
         $result->closeCursor();
 
         return $games;
+    }
+
+    public function saveResult($post)
+    {
+        extract($post);
+        $sql = 'INSERT INTO game (date, utilisateur, level, win, temps) VALUES (CURRENT_DATE, ?, ?, ?, ?)';
+        $result = $this->createQuery($sql, [$utilisateur, $level, $win, $temps]);
+
+        return $result;
     }
 }

@@ -27,6 +27,12 @@ class Memory
         ]);
     }
 
+    public function endGame($post) {
+        $game = $this->gameDAO->saveResult($post);
+
+        return json_encode($game);
+    }
+
     public function game()
     {
         if (!isset($_POST['difficulte'])) header("Location: ./index.php");

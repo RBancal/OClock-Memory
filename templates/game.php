@@ -1,7 +1,7 @@
 <?php $this->title = "Memory - Game" ?>
 <div id="informations">
-    <p>Utilisateur : <?php echo $_POST['utilisateur'] ?></p>
-    <p>Difficulté : <?php echo $_POST['difficulte'] ?></p>
+    <p>Utilisateur : <span id="utilisateur"><?php echo $_POST['utilisateur'] ?></span></p>
+    <p>Difficulté : <span id="difficulte"><?php echo $_POST['difficulte'] ?></span></p>
 </div>
 <div id="game-board">
     <?php

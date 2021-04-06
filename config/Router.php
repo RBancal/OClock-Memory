@@ -22,22 +22,22 @@ class Router
 
     public function run()
     {
-        try{
-            if(isset($_GET['route']))
-            {
-                if($_GET['route'] === 'game'){
+        try {
+            if (isset($_GET['route'])) {
+                if ($_GET['route'] === 'game') {
                     $this->memoryController->game();
-                }
-                else{
+                } elseif ($_GET['route'] === 'end-game') {
+                    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                        $this->memoryController->endGame($_POST);
+                    }
+                    $this->memoryController->accueil();
+                } else {
                     $this->errorController->errorNotFound();
                 }
-            }
-            else{
+            } else {
                 $this->memoryController->accueil();
             }
-        }
-        catch (Exception $e)
-        {
+        } catch (Exception $e) {
             $this->errorController->errorServer();
         }
     }
